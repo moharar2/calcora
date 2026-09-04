@@ -5,10 +5,7 @@
   var SOCIAL_IMAGE = ORIGIN + '/social-card.svg';
 
   var routes = {
-    '/': {
-      title: 'MoneyCalci — Calculate Smarter. Decide Better.',
-      description: 'Free, easy-to-understand financial calculators for loans, mortgages, savings, investments, and more.'
-    },
+    '/': { title: 'MoneyCalci — Calculate Smarter. Decide Better.', description: 'Free, easy-to-understand financial calculators for loans, mortgages, savings, investments, and more.' },
     '/calculators': { title: 'Financial Calculators — MoneyCalci', description: 'Explore free financial calculators for loans, mortgages, savings, investments, salary, taxes, and business decisions.' },
     '/categories': { title: 'Financial Calculator Categories — MoneyCalci', description: 'Browse MoneyCalci calculators by financial category, including loans, salary, taxes, investment, business, ecommerce, currency, and savings.' },
     '/finance': { title: 'Finance Calculators — MoneyCalci', description: 'Use free finance calculators to estimate payments, savings, interest, returns, and other everyday money scenarios.' },
@@ -37,6 +34,11 @@
     '/discount-calculator': { title: 'Discount Calculator — Sale Price & Savings | MoneyCalci', description: 'Calculate discounts, sale prices, and savings from an original price and discount percentage.' },
     '/sales-tax-calculator': { title: 'Sales Tax Calculator — Tax & Total Price | MoneyCalci', description: 'Calculate sales tax, tax-inclusive totals, and pre-tax prices with a simple free calculator.' },
     '/blog': { title: 'Financial Guides & Calculations — MoneyCalci', description: 'Read practical MoneyCalci guides explaining loans, compound interest, profit margin, ROI, gross pay, and net pay.' },
+    '/blog/how-is-a-loan-payment-calculated': { title: 'How Is a Loan Payment Calculated? | MoneyCalci', description: 'Learn how fixed-rate loan payments are calculated, including principal, interest, rate, term, and amortization.' },
+    '/blog/how-does-compound-interest-work': { title: 'How Does Compound Interest Work? | MoneyCalci', description: 'Learn how compound interest grows money over time and how compounding frequency and contributions affect growth.' },
+    '/blog/how-to-calculate-profit-margin': { title: 'How to Calculate Profit Margin | MoneyCalci', description: 'Learn how to calculate gross profit margin from revenue and costs, with a simple formula and example.' },
+    '/blog/how-to-calculate-roi': { title: 'How to Calculate ROI | MoneyCalci', description: 'Learn how to calculate return on investment using initial cost, final value, profit, and the standard ROI formula.' },
+    '/blog/gross-pay-vs-net-pay': { title: 'Gross Pay vs Net Pay: What’s the Difference? | MoneyCalci', description: 'Understand the difference between gross pay and net pay, including taxes, deductions, and paycheck calculations.' },
     '/about': { title: 'About MoneyCalci', description: 'Learn how MoneyCalci creates clear educational financial estimates.' },
     '/contact': { title: 'Contact MoneyCalci', description: 'Contact MoneyCalci with questions or feedback about the calculators.' },
     '/privacy-policy': { title: 'Privacy Policy | MoneyCalci', description: 'Read how MoneyCalci handles local calculator preferences, shareable URLs, analytics, and data-use information.' },
