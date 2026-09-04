@@ -16,8 +16,8 @@
     '/business': { title: 'Business Calculators — MoneyCalci', description: 'Calculate profit, margin, markup, ROI, and other useful business metrics with free, easy-to-understand tools.' },
     '/ecommerce': { title: 'Ecommerce Calculators — MoneyCalci', description: 'Calculate ecommerce profit, margin, markup, and pricing scenarios with simple free business tools.' },
     '/currency': { title: 'Currency Converter — MoneyCalci', description: 'Convert currencies with MoneyCalci and review the exchange-rate estimate for your selected currency pair.' },
-    '/tools': { title: 'Financial Tools — MoneyCalci', description: 'Browse MoneyCalci financial tools and calculators for loans, savings, investment, salary, tax, business, and more.' },
-    '/savings': { title: 'Savings Calculators — MoneyCalci', description: 'Plan savings growth, interest, contributions, and financial goals with free MoneyCalci calculators.' },
+    '/tools': { title: 'Financial Calculators — MoneyCalci', description: 'Explore free financial calculators for loans, mortgages, savings, investments, salary, taxes, and business decisions.', canonicalPath: '/calculators' },
+    '/savings': { title: 'Savings Calculator — Growth & Contributions | MoneyCalci', description: 'Estimate savings growth from a starting balance, recurring contributions, interest, and time.', canonicalPath: '/savings-calculator' },
     '/loan-calculator': { title: 'Loan Calculator — Monthly Payment & Interest | MoneyCalci', description: "Estimate a fixed-rate loan payment, total interest, and repayment with MoneyCalci's free loan calculator." },
     '/mortgage-calculator': { title: 'Mortgage Calculator — Estimate Your Monthly Payment | MoneyCalci', description: 'Estimate mortgage principal, interest, property tax, insurance, PMI, and HOA costs with a clear fixed-rate calculator.' },
     '/personal-loan-calculator': { title: 'Personal Loan Calculator — Payment & Interest | MoneyCalci', description: 'Estimate personal-loan payments, interest, and total repayment for a fixed-rate installment scenario.' },
@@ -80,7 +80,8 @@
     var path = normalizePath(window.location.pathname);
     var config = routes[path];
     var isKnown = Boolean(config);
-    var canonical = ORIGIN + (path === '/' ? '/' : path);
+    var canonicalPath = isKnown && config.canonicalPath ? config.canonicalPath : path;
+    var canonical = ORIGIN + (canonicalPath === '/' ? '/' : canonicalPath);
 
     if (!isKnown) {
       document.title = 'Page Not Found | MoneyCalci';
