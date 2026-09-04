@@ -1,0 +1,1 @@
+SEO Phase 1 uses client/public/initial-seo.js for pre-React route metadata and client/src/components/InitialSeoRuntime.tsx to reapply it after Wouter navigation.
