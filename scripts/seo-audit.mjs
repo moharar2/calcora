@@ -3,6 +3,7 @@ import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 
 const execFileAsync = promisify(execFile);
+const packageManager = process.platform === "win32" ? "pnpm.cmd" : "pnpm";
 
 const root = new URL("../", import.meta.url);
 const read = file => readFile(new URL(file, root), "utf8");
@@ -25,7 +26,7 @@ if (!home.includes("noindex,follow")) failures.push("missing search noindex safe
 if (!home.includes("<h1") || !seoBlocks.includes("<h1") || !notFound.includes("<h1")) failures.push("missing H1 in a public page family");
 if (!seoBlocks.includes("BreadcrumbList") || !seoBlocks.includes("FAQPage") || !seoBlocks.includes("@type\": \"Article\"")) failures.push("missing structured-data hook");
 try {
-  await execFileAsync("pnpm", ["tsx", "scripts/rendered-seo-audit.tsx"], { cwd: new URL("../", import.meta.url), stdio: "pipe" });
+  await execFileAsync(packageManager, ["tsx", "scripts/rendered-seo-audit.tsx"], { cwd: new URL("../", import.meta.url), stdio: "pipe" });
 } catch (error) {
   failures.push(`rendered SEO route audit failed: ${error?.message || "unknown error"}`);
 }
