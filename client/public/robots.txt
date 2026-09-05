@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Disallow:
+Disallow: /api/
 Sitemap: https://moneycalci.online/sitemap.xml
