@@ -33,8 +33,9 @@ if (initialSeo.includes("localhost") || initialSeo.includes("www.moneycalci.onli
 if (!home.includes("<h1") || !seoBlocks.includes("<h1") || !notFound.includes("<h1")) failures.push("missing H1 in a public page family");
 if (!seoBlocks.includes("BreadcrumbList") || !seoBlocks.includes("FAQPage") || !seoBlocks.includes("@type\": \"Article\"")) failures.push("missing structured-data hook");
 try {
-  const tsxCli = fileURLToPath(import.meta.resolve("tsx/cli"));
-  const result = await execFileAsync(process.execPath, [tsxCli, "scripts/rendered-seo-audit.tsx"], { cwd: rootPath, stdio: "pipe", windowsHide: true });
+  // Load tsx directly through Node instead of spawning the pnpm executable.
+  // This works consistently in GitHub Codespaces and local Windows environments.
+  const result = await execFileAsync(process.execPath, ["--import", "tsx", "scripts/rendered-seo-audit.tsx"], { cwd: rootPath, stdio: "pipe", windowsHide: true });
   if (!result.stdout.includes("Rendered SEO audit passed")) failures.push("rendered SEO route audit returned no success marker");
 } catch (error) {
   failures.push(`rendered SEO route audit failed: ${error?.stderr || error?.message || "unknown error"}`);
